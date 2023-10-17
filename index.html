@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Centered Text</title>
+    <title>Lemme cook!</title>
     <style>
         body {
             margin: 0;
@@ -12,7 +12,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            position: relative;
         }
 
         .center-text {
@@ -21,18 +22,29 @@
         }
 
         footer {
+            background-color: #333;
+            color: #fff;
             text-align: center;
-            margin-top: 20px;
+            padding: 10px 0;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="center-text">
-        <p>name</p>
+        <p>It's cookin' hot</p>
     </div>
-    
-    <footer>
-        <a href="/imprint.html">Imprint</a>
-    </footer>
 </body>
+<footer>
+    <a href="/imprint.html">Imprint</a>
+</footer>
 </html>
