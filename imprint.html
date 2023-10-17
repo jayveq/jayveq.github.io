@@ -15,15 +15,15 @@
             min-height: 100vh;
             margin: 0;
             padding: 0;
-            font-family: 'Open Sans', sans-serif; /* Apply the Google Font */
+            font-family: 'Open Sans', sans-serif;
         }
 
         footer {
             background-color: #333;
             color: #fff;
             text-align: center;
-            width: 100%;
             padding: 10px 0;
+            width: 100%;
             position: absolute;
             bottom: 0;
             font-family: Arial, sans-serif;
@@ -38,9 +38,30 @@
         h1 {
             margin: 0;
         }
+
+        .back-to-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .icon {
+            font-size: 24px;
+            color: #007bff;
+        }
+
+        .icon:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
+    <div class="back-to-home">
+        <a href="/index.html"> <!-- Update the href attribute with your main page's URL -->
+            <span class="icon">&#8962;</span> <!-- Add the icon here (e.g., &#8962; is a home icon) -->
+            <span>Home</span>
+        </a>
+    </div>
     <h1>Imprint</h1>
     <p>This is the Imprint page for my cookin' website.</p>
     <p>Contact Information:</p>
