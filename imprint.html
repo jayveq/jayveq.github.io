@@ -58,29 +58,72 @@
 
     
     <script>
-      // Array of different titles
-      const titles = [
-        "Impressum",
-        "Iiiiiimpreeeeessuuuuum",
-        "I.M.P.R.E.S.S.U.M.",
-        "Was ist bitte so spannend an einem Impressum?",
-      ];
+    $(document).ready(function() {
+      // Konami Code sequence
+      var konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
+      var konamiCodePosition = 0;
+      var isDragging = false; // To track if the pop-up is being dragged
     
-      // Function to change the title randomly
-      function changeTitle() {
-        const randomIndex = Math.floor(Math.random() * titles.length);
-        document.title = titles[randomIndex];
+      var konamiPopup = document.getElementById("konami-popup");
+      var titleBar = document.getElementById("konami-popup-title");
     
-        // Generate a random time interval between 10 and 120 seconds (adjust as needed)
-        const randomInterval = Math.floor(Math.random() * (12000 - 10000 + 1)) + 10000;
-        
-        // Set a new random interval for the next title change
-        setTimeout(changeTitle, randomInterval);
+      // Function to show the pop-up
+      function showPopup() {
+        konamiPopup.style.display = "block";
       }
     
-      // Call the function to change the title initially
-      changeTitle();
+      // Function to hide the pop-up
+      function hidePopup() {
+        konamiPopup.style.display = "none";
+      }
+    
+      // Function to handle the start of a drag
+      function dragStart(e) {
+        if (e.target === titleBar) {
+          isDragging = true;
+          offset = [konamiPopup.offsetLeft - e.clientX, konamiPopup.offsetTop - e.clientY];
+        }
+      }
+    
+      // Function to handle the end of a drag
+      function dragEnd() {
+        isDragging = false;
+      }
+    
+      // Function to handle dragging
+      function drag(e) {
+        if (isDragging) {
+          e.preventDefault();
+          konamiPopup.style.left = (e.clientX + offset[0]) + "px";
+          konamiPopup.style.top = (e.clientY + offset[1]) + "px";
+        }
+      }
+    
+      titleBar.addEventListener("mousedown", dragStart);
+      window.addEventListener("mouseup", dragEnd);
+      window.addEventListener("mousemove", drag);
+    
+      // Listen for keydown events
+      $(document).keydown(function(e) {
+        // Check if the key matches the next in the sequence
+        if (e.key === konamiCode[konamiCodePosition]) {
+          konamiCodePosition++;
+    
+          // Check if the entire Konami Code has been entered
+          if (konamiCodePosition === konamiCode.length) {
+            showPopup();
+            konamiCodePosition = 0; // Reset for future use
+          }
+        } else {
+          konamiCodePosition = 0; // Reset if a wrong key is pressed
+        }
+      });
+    
+      // Close the pop-up
+      $("#close-popup").click(hidePopup);
+    });
     </script>
+
 
     
     <style>
@@ -161,6 +204,18 @@
         }
         
     </style>
+
+    <div id="konami-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 0; border: 1px solid #333; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); width: 300px;">
+        <div style="background-color: #333; color: grey; padding: 15px; cursor: move;" id="konami-popup-title">Why would you do this?</div>
+        <div style="padding: 20px;">
+            <h2>Seriously?</h2>
+            <p>There is nothing to see here.</p>
+        </div>
+        <button id="close-popup" style="width: 100%; padding: 10px; background-color: #333; color: white; border: none; cursor: pointer;">Close</button>
+    </div>
+
+
+    
 </head>
 <body>
     <div class="back-to-home">
