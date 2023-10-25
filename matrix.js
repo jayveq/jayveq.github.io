@@ -1,9 +1,6 @@
 const matrixContainer = document.getElementById("matrix-container");
 const matrix = document.getElementById("matrix");
-const characters = []; // Define characters as a global array
-
-let running = false;
-let stopped = false;
+const characters = [];
 
 // Generate random characters
 function generateCharacter() {
@@ -23,24 +20,17 @@ function createCharacter() {
 
 // Start the animation
 function startMatrix() {
-    if (running) return;
-
-    running = true;
     matrixContainer.style.display = "block";
 
     // Generate and add characters to the matrix
     for (let i = 0; i < 100; i++) {
         const character = createCharacter();
-        characters.push(character); // Add the character to the global array
+        characters.push(character);
         matrix.appendChild(character);
     }
 
     // Animate the matrix
     function animate() {
-        if (stopped) {
-            return;
-        }
-
         characters.forEach((character) => {
             const currentBottom = parseFloat(character.style.bottom);
             if (currentBottom < 0) {
@@ -57,33 +47,5 @@ function startMatrix() {
     animate();
 }
 
-// Stop the animation
-function stopMatrix() {
-    if (!running) return;
-
-    running = false;
-    stopped = true;
-    matrixContainer.style.display = "none";
-    characters.forEach((character) => matrix.removeChild(character));
-}
-
-// Listen for keyboard input
-document.addEventListener("keyup", (event) => {
-    if (event.key.toLowerCase() === "n") {
-        document.addEventListener("keyup", (event) => {
-            if (event.key.toLowerCase() === "e") {
-                document.addEventListener("keyup", (event) => {
-                    if (event.key.toLowerCase() === "o") {
-                        startMatrix();
-                    }
-                });
-            }
-        });
-    }
-});
-
-document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-        stopMatrix();
-    }
-});
+// Start the animation immediately on page load
+startMatrix();
