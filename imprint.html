@@ -9,6 +9,54 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="Media/10036 glyph.png" type="image/png">
 
+    <!-- Pop Up Experiment -->
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <div id="konami-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 1px solid #333; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
+        <h2>Konami Code Activated!</h2>
+        <p>This is your special message.</p>
+        <button id="close-popup">Close</button>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+          // Konami Code sequence
+          var konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
+          var konamiCodePosition = 0;
+        
+          // Function to show the pop-up
+          function showPopup() {
+            $("#konami-popup").show();
+          }
+        
+          // Function to hide the pop-up
+          function hidePopup() {
+            $("#konami-popup").hide();
+          }
+        
+          // Listen for keydown events
+          $(document).keydown(function(e) {
+            // Check if the key matches the next in the sequence
+            if (e.key === konamiCode[konamiCodePosition]) {
+              konamiCodePosition++;
+        
+              // Check if the entire Konami Code has been entered
+              if (konamiCodePosition === konamiCode.length) {
+                showPopup();
+                konamiCodePosition = 0; // Reset for future use
+              }
+            } else {
+              konamiCodePosition = 0; // Reset if a wrong key is pressed
+            }
+          });
+        
+          // Close the pop-up
+          $("#close-popup").click(hidePopup);
+        });
+    </script>
+
+    
     <script>
       // Array of different titles
       const titles = [
