@@ -20,7 +20,7 @@ function createCharacter() {
 
 // Start the animation
 function startMatrix() {
-    matrixContainer.style.display = "block";
+    matrixContainer.style.display = "block"; // Corrected "display" property
 
     // Generate and add characters to the matrix
     for (let i = 0; i < 100; i++) {
