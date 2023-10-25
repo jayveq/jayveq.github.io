@@ -13,11 +13,16 @@
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <div id="konami-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 1px solid #333; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
-        <h2>Konami Code Activated!</h2>
-        <p>This is your special message.</p>
-        <button id="close-popup">Close</button>
+    <div id="konami-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 0; border: 1px solid #333; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); width: 300px;">
+    <div style="background-color: #333; color: grey; padding: 15px; cursor: move;" id="konami-popup-title">Why would you do this?</div>
+    <div style="padding: 20px;">
+        <h2>Seriously?</h2>
+        <p>There is nothing to see here.</p>
+        </div>
+    <button id="close-popup" style="width: 100%; padding: 10px; background-color: #333; color: white; border: none; cursor: pointer;">Close</button>
     </div>
+
+
 
     <script>
         $(document).ready(function() {
@@ -204,15 +209,6 @@
         }
         
     </style>
-
-    <div id="konami-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 0; border: 1px solid #333; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); width: 300px;">
-        <div style="background-color: #333; color: grey; padding: 15px; cursor: move;" id="konami-popup-title">Why would you do this?</div>
-        <div style="padding: 20px;">
-            <h2>Seriously?</h2>
-            <p>There is nothing to see here.</p>
-        </div>
-        <button id="close-popup" style="width: 100%; padding: 10px; background-color: #333; color: white; border: none; cursor: pointer;">Close</button>
-    </div>
 
 
     
