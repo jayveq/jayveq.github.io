@@ -58,7 +58,7 @@
             left: 20px;
             font-size: 1.5em;
             cursor: pointer;
-            transition: transform 0.3s, content 0.3s;
+            transition: transform 0.3s;
         }
         .symbol:hover {
             transform: rotate(180deg);
@@ -66,7 +66,10 @@
         .symbol:hover::before {
             content: 'lol';
         }
-        .symbol-link {
+        .symbol::before {
+            content: '\27B3'; /* Angzarr-Symbol */
+        }
+        .symbol a {
             color: inherit;
             text-decoration: none;
         }
@@ -135,7 +138,7 @@
 <body>
     <header>
         <div class="symbol">
-            <a href="https://ionathan.ch/2022/04/09/angzarr.html" target="_blank" class="symbol-link">&angzarr;</a>
+            <a href="https://ionathan.ch/2022/04/09/angzarr.html" target="_blank"></a>
         </div>
         <div class="nav-container">
             <nav>
