@@ -142,7 +142,7 @@
     <script>
         // Function to load titles from the /Header.txt file and update the title every 20 seconds
         async function loadTitles() {
-            const response = await fetch('/Header.txt');
+            const response = await fetch('Header.txt');
             const text = await response.text();
             const titles = text.split('\n').filter(title => title.trim() !== '');
             if (titles.length > 0) {
