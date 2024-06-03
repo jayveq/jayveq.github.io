@@ -64,7 +64,7 @@
             transform: rotate(180deg);
         }
         .symbol::before {
-            content: '\2228';
+            content: '\27B3'; /* Angzarr-Symbol */
         }
         .symbol:hover::before {
             content: 'lol';
@@ -83,20 +83,23 @@
         }
         .hero-text {
             position: absolute;
-            top: 50%;
+            bottom: 10%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, 0);
             color: white;
             text-align: center;
             text-shadow: 8px 8px 20px rgba(0, 0, 0, 0.9); /* Deutlich vergrößerter Schatten */
+            width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
         }
         .hero-text h1 {
             margin: 0;
-            font-size: 3em;
+            font-size: 4vw; /* Responsive Schriftgröße */
         }
         .hero-text p {
             margin: 0;
-            font-size: 1.5em;
+            font-size: 2vw; /* Responsive Schriftgröße */
         }
         .trademark {
             position: absolute;
