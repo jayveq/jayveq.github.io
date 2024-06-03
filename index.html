@@ -17,9 +17,7 @@
             background: rgba(0, 0, 0, 0.5); /* Halbtransparent */
             color: white;
             padding: 1em;
-            position: fixed;
-            top: 0;
-            width: 100%;
+            position: relative;
             z-index: 2;
             display: flex;
             justify-content: center;
@@ -79,16 +77,13 @@
         .hero {
             position: relative;
             width: 100%;
-            margin-top: 60px; /* Platz für den Header schaffen */
         }
         .hero img {
             width: 100%;
             height: auto;
             max-height: 750px;
             object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
+            margin-top: -100px; /* Bild leicht nach oben verschieben */
         }
         .hero-text {
             position: absolute;
@@ -119,7 +114,6 @@
             padding: 2em;
             max-width: 800px;
             margin: 0 auto;
-            margin-top: 80px; /* Platz schaffen für die Sektionen */
         }
         footer {
             background-color: transparent;
