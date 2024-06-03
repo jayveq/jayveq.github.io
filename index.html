@@ -97,6 +97,16 @@
         .hero-text p {
             margin: 0;
             font-size: 1.8vw; /* 10% kleinere Schriftgröße */
+            transition: opacity 0.3s;
+        }
+        .hero-text p.hover-text {
+            display: none;
+        }
+        .hero-text:hover .default-text {
+            display: none;
+        }
+        .hero-text:hover .hover-text {
+            display: block;
         }
         .trademark {
             position: absolute;
@@ -158,7 +168,8 @@
         <img src="https://jayveq.github.io/JoshuaSchmitz-itztimsky.jpg" alt="Header Bild">
         <div class="hero-text">
             <h1>Joshua Schmitz</h1>
-            <p>Social Media Experte, Formatentwickler und Journalist</p>
+            <p class="default-text">Jack of all Trades</p>
+            <p class="hover-text">Social Media Experte, Formatentwickler und Journalist</p>
         </div>
         <div class="trademark">
             <p>&copy; itstimzki</p>
