@@ -63,6 +63,14 @@
         .symbol:hover {
             transform: rotate(180deg);
         }
+        .symbol::before {
+            content: '\27B3'; /* Angzarr-Symbol */
+            display: block;
+        }
+        .symbol:hover::before {
+            content: 'lol';
+            transform: scaleY(-1); /* Umgedrehtes "lol" */
+        }
         .symbol a {
             color: inherit;
             text-decoration: none;
