@@ -23,6 +23,11 @@
             justify-content: center;
             align-items: center;
         }
+        .nav-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
         header nav {
             display: flex;
             gap: 2em;
@@ -47,6 +52,27 @@
             width: 20px;
             height: 20px;
             filter: invert(100%); /* Ändert die Farbe der Icons zu Weiß */
+        }
+        .symbol {
+            position: absolute;
+            left: 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .symbol:hover {
+            transform: rotate(180deg);
+        }
+        .symbol::after {
+            content: 'J.S.';
+            display: none;
+            margin-left: 5px;
+        }
+        .symbol:hover::after {
+            display: inline;
+        }
+        .symbol:hover::before {
+            display: none;
         }
         .hero {
             position: relative;
@@ -108,12 +134,15 @@
 </head>
 <body>
     <header>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="#contact">Kontakt</a>
-        </nav>
+        <div class="symbol">&angzarr;</div>
+        <div class="nav-container">
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Kontakt</a>
+            </nav>
+        </div>
         <div class="social-icons">
             <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
                 <img src="instagram.svg" alt="Instagram">
@@ -152,6 +181,11 @@
         <h2>Kontakt</h2>
         <p>Hier können Besucher Kontakt zu dir aufnehmen.</p>
     </section>
+    <div class="social-links">
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://www.twitter.com" target="_blank">X</a>
+    </div>
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 Joshua Schmitz. All rights reserved. <a href="#imprint">Imprint</a></p>
