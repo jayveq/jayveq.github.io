@@ -7,16 +7,23 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
+            background-color: #000000;
+            color: #ffffff;
             margin: 0;
             padding: 0;
+            text-align: center; /* Zentriert alle Texte im Body */
         }
         header {
-            background-color: #0066cc;
+            background: rgba(0, 0, 0, 0.5); /* Transparenter Header */
             color: white;
             padding: 1em;
             text-align: center;
+            position: relative;
+        }
+        header img {
+            width: 100%;
+            height: auto;
+            opacity: 0.5; /* Bildtransparenz */
         }
         nav {
             display: flex;
@@ -30,6 +37,8 @@
         }
         section {
             padding: 2em;
+            max-width: 800px;
+            margin: 0 auto; /* Zentriert die Abschnitte */
         }
         footer {
             background-color: #0066cc;
@@ -40,10 +49,20 @@
             width: 100%;
             bottom: 0;
         }
+        .social-links {
+            margin-top: 1em;
+        }
+        .social-links a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
     </style>
 </head>
 <body>
     <header>
+        <img src="https://jayveq.github.io/CT_041.jpg" alt="Header Bild">
         <h1>Mein Kreatives Portfolio</h1>
     </header>
     <nav>
@@ -68,6 +87,11 @@
         <h2>Kontakt</h2>
         <p>Hier können Besucher Kontakt zu dir aufnehmen.</p>
     </section>
+    <div class="social-links">
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://www.twitter.com" target="_blank">X</a>
+    </div>
     <footer>
         <p>&copy; 2024 Mein Kreatives Portfolio</p>
     </footer>
