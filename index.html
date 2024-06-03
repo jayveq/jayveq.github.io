@@ -68,8 +68,11 @@
             display: block;
         }
         .symbol:hover::before {
+            content: '';
+        }
+        .symbol:hover::after {
             content: 'lol';
-            transform: scaleY(-1); /* Umgedrehtes "lol" */
+            transform: scaleY(-1) rotate(180deg); /* Umgedrehtes "lol" */
         }
         .symbol a {
             color: inherit;
