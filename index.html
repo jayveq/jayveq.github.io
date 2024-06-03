@@ -19,16 +19,27 @@
             padding: 1em;
             text-align: center;
             position: relative;
-            z-index: 2; /* Header vor dem Bild */
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         header nav {
-            display: flex;
-            justify-content: center;
-            background-color: rgba(0, 0, 0, 0.7);
+            flex: 1;
+            text-align: center;
         }
         header nav a {
             color: white;
             padding: 1em;
+            text-decoration: none;
+        }
+        .social-icons {
+            display: flex;
+            gap: 1em;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 1.5em;
             text-decoration: none;
         }
         .hero {
@@ -38,6 +49,8 @@
         .hero img {
             width: 100%;
             height: auto;
+            max-height: 500px;
+            object-fit: cover;
         }
         .hero-text {
             position: absolute;
@@ -46,6 +59,7 @@
             transform: translate(-50%, -50%);
             color: white;
             text-align: center;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
         .hero-text h1 {
             margin: 0;
@@ -88,13 +102,17 @@
 </head>
 <body>
     <header>
-        <h1>Joshua Schmitz</h1>
         <nav>
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#work">Work</a>
             <a href="#contact">Kontakt</a>
         </nav>
+        <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+            <a href="https://www.twitter.com" target="_blank">X</a>
+        </div>
     </header>
     <div class="hero">
         <img src="https://jayveq.github.io/CT_041.jpg" alt="Header Bild">
