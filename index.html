@@ -58,21 +58,21 @@
             left: 20px;
             font-size: 1.5em;
             cursor: pointer;
-            transition: transform 0.3s;
-        }
-        .symbol-link:hover {
-            transform: rotate(180deg);
-        }
-        .symbol-link::before {
-            content: '\27B3'; /* Angzarr-Symbol */
-        }
-        .symbol-link:hover::before {
-            content: 'lol';
-            transform: rotate(0deg);
         }
         .symbol-link a {
             color: inherit;
             text-decoration: none;
+            transition: transform 0.3s, content 0.3s;
+        }
+        .symbol-link a:hover {
+            transform: rotate(180deg);
+        }
+        .symbol-link a::before {
+            content: '\27B3'; /* Angzarr-Symbol */
+        }
+        .symbol-link a:hover::before {
+            content: 'lol';
+            transform: rotate(0deg);
         }
         .hero {
             position: relative;
@@ -139,7 +139,7 @@
 <body>
     <header>
         <div class="symbol-link">
-            <a href="https://ionathan.ch/2022/04/09/angzarr.html" target="_blank">&angzarr;</a>
+            <a href="https://ionathan.ch/2022/04/09/angzarr.html" target="_blank"></a>
         </div>
         <div class="nav-container">
             <nav>
