@@ -63,16 +63,12 @@
         .symbol:hover {
             transform: rotate(180deg);
         }
-        .symbol::after {
-            content: 'lol';
-            display: none;
-            margin-left: 5px;
-        }
-        .symbol:hover::after {
-            display: inline;
+        .symbol::before {
+            content: '\2228';
         }
         .symbol:hover::before {
-            content: none;
+            content: 'lol';
+            transform: rotate(0deg);
         }
         .hero {
             position: relative;
@@ -135,7 +131,7 @@
 </head>
 <body>
     <header>
-        <div class="symbol">&angzarr;</div>
+        <div class="symbol"></div>
         <div class="nav-container">
             <nav>
                 <a href="#home">Home</a>
