@@ -63,6 +63,13 @@
         .symbol:hover {
             transform: rotate(180deg);
         }
+        .symbol:hover::before {
+            content: '';
+        }
+        .symbol:hover::after {
+            content: 'lol';
+            transform: scaleY(-1); /* Umgedrehtes "lol" */
+        }
         .symbol a {
             color: inherit;
             text-decoration: none;
@@ -92,11 +99,11 @@
         }
         .hero-text h1 {
             margin: 0;
-            font-size: 4vw; /* Responsive Schriftgröße */
+            font-size: 3.6vw; /* 10% kleinere Schriftgröße */
         }
         .hero-text p {
             margin: 0;
-            font-size: 2vw; /* Responsive Schriftgröße */
+            font-size: 1.8vw; /* 10% kleinere Schriftgröße */
         }
         .trademark {
             position: absolute;
