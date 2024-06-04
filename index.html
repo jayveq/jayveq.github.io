@@ -81,7 +81,7 @@
         }
         .hero-text {
             position: absolute;
-            bottom: 5%; /* Hover-Zone etwas tiefer angesetzt */
+            bottom: 50%; /* Hover-Zone deutlich tiefer angesetzt */
             left: 50%;
             transform: translate(-50%, 0);
             color: white;
@@ -98,16 +98,19 @@
         .hero-text p {
             margin: 0;
             font-size: 1.8vw; /* 10% kleinere Schriftgröße */
-            transition: opacity 0.6s; /* Übergang langsamer und fließender */
+            opacity: 1;
+            transition: opacity 1s ease-in-out; /* Übergang langsamer und fließender */
         }
         .hero-text p.hover-text {
-            display: none;
+            opacity: 0;
+            position: absolute;
+            top: 0;
         }
         .hero-text:hover .default-text {
-            display: none;
+            opacity: 0;
         }
         .hero-text:hover .hover-text {
-            display: block;
+            opacity: 1;
         }
         .trademark {
             position: absolute;
@@ -137,11 +140,6 @@
             bottom: 0;
             width: 100%;
             padding: 10px;
-        }
-        @media (prefers-color-scheme: dark) {
-            link[rel='icon'] {
-                filter: invert(100%);
-            }
         }
     </style>
     <script>
